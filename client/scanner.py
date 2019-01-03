@@ -23,9 +23,11 @@ class Scanner:
         reversed_root_name = ""
 
         while path[x] != "/":  # Could be a problem in Windows where the slashes are reversed
+            # These get added beginning at the end so they are reversed
             reversed_root_name = reversed_root_name + p[x]
             x = x - 1
 
+        # This trick reverses it (so it's back to being forward)
         corrected_root_name = reversed_root_name[::-1]
         # print(root_name)
         return corrected_root_name
