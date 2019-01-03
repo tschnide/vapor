@@ -12,8 +12,10 @@ class Scanner:
 
     def get_file_names(self):
         for root, dirs, files in os.walk(self.target_directory):
-            for name in files:
-                print name
+            for directory_name in dirs:
+                print(directory_name)
+            for file_name in files:
+                print(file_name)
 
 
 s1 = Scanner("/Users/Schnider/Desktop/vapor")
