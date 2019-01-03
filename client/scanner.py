@@ -17,6 +17,21 @@ class Scanner:
             for file_name in file_list:
                 print(file_name)
 
+    def get_root_dir(self, path):
+        x = -1
+        p = list(path)
+        reversed_root_name = ""
+
+        while path[x] != "/":  # Could be a problem in Windows where the slashes are reversed
+            reversed_root_name = reversed_root_name + p[x]
+            x = x - 1
+
+        corrected_root_name = reversed_root_name[::-1]
+        # print(root_name)
+        return corrected_root_name
+
 
 s1 = Scanner("/Users/Schnider/Desktop/vapor/test_root")
-s1.print_dir_tree()
+# s1.print_dir_tree()
+p1 = "/Users/Schnider/Desktop/vapor/test_root"
+print(s1.get_root_dir(p1))
